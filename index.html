@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura | Interior Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="slider-style-v2.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">AURA.</a>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Works</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="stack-container">
+        <section class="stack-section">
+            <header class="hero">
+                <div class="slider-container">
+            <div class="slide active">
+                <img src="assets/slide_1_living_room_1790944813704.jpg" alt="Living Room">
+                <div class="slide-content">
+                    <h1>Spaces that breathe.<br>Designs that live.</h1>
+                    <p>Curating timeless interiors for modern living.</p>
+                    <a href="contact.html" class="btn">View Project</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="assets/slide_2_kitchen_1790945240669.jpg" alt="Kitchen">
+                <div class="slide-content">
+                    <h1>Culinary Elegance</h1>
+                    <p>Where function meets exquisite form.</p>
+                    <a href="contact.html" class="btn">View Project</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="assets/slide_3_bedroom_1790946165935.jpg" alt="Bedroom">
+                <div class="slide-content">
+                    <h1>Serene Retreats</h1>
+                    <p>Designed for restorative rest.</p>
+                    <a href="contact.html" class="btn">View Project</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="assets/slide_4_bathroom_1790944922511.jpg" alt="Bathroom">
+                <div class="slide-content">
+                    <h1>Personal Sanctuaries</h1>
+                    <p>Spa-like luxury in the comfort of home.</p>
+                    <a href="contact.html" class="btn">View Project</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="assets/slide_5_office_1790944935770.jpg" alt="Office">
+                <div class="slide-content">
+                    <h1>Focused Environments</h1>
+                    <p>Inspiring workspaces for modern professionals.</p>
+                    <a href="#contact" class="btn">View Project</a>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="prev-btn">&#10094;</button>
+            <button class="next-btn">&#10095;</button>
+        </div>
+            </header>
+        </section>
+
+        <section class="stack-section" style="background-color: var(--bg-color); color: var(--text-main); display: flex; align-items: center; justify-content: center; text-align: center;">
+            <div class="container">
+                <h2 style="font-family: var(--font-heading); font-size: 5rem; margin-bottom: 2rem;">Our Philosophy</h2>
+                <p style="font-size: 1.4rem; max-width: 800px; margin: 0 auto 3rem auto; line-height: 1.6; color: var(--text-muted);">We believe that the spaces we inhabit shape our daily experiences. Our mission is to craft environments that inspire, calm, and elevate the human spirit.</p>
+                <a href="about.html" class="btn btn-dark">Discover The Studio</a>
+            </div>
+        </section>
+
+        <section class="stack-section" style="background-color: var(--text-main); color: var(--bg-color); display: flex; align-items: center; justify-content: center; text-align: center;">
+            <div class="container">
+                <h2 style="font-family: var(--font-heading); font-size: 5rem; margin-bottom: 2rem;">Featured Works</h2>
+                <p style="font-size: 1.4rem; max-width: 800px; margin: 0 auto 3rem auto; line-height: 1.6; color: rgba(255,255,255,0.7);">A curated selection of our most recent and celebrated interior design projects.</p>
+                <a href="portfolio.html" class="btn" style="border: 1px solid rgba(255,255,255,0.2);">View Portfolio</a>
+            </div>
+        </section>
+
+        <section class="stack-section" style="background-color: #f0ebe1; color: var(--text-main); display: flex; align-items: center; justify-content: center; text-align: center;">
+            <div class="container">
+                <h2 style="font-family: var(--font-heading); font-size: 5rem; margin-bottom: 2rem;">Our Expertise</h2>
+                <p style="font-size: 1.4rem; max-width: 800px; margin: 0 auto 3rem auto; line-height: 1.6; color: var(--text-muted);">From architectural conception to the final curated accessory, we offer comprehensive design services including spatial planning, custom furniture design, and project management.</p>
+                <a href="contact.html" class="btn btn-dark">Inquire Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" style="position: relative; z-index: 10;">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column large">
+                    <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1rem;">AURA.</h2>
+                    <p style="font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 350px; color: var(--text-muted);">Curating timeless interiors for modern living. Elevating spaces with minimalist aesthetics.</p>
+                    
+                    <div class="social-icons" style="display: flex; gap: 1.2rem; flex-direction: row; font-size: 1.2rem;">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column large">
+                    <h4>Newsletter</h4>
+                    <p style="font-size: 1.05rem; margin-bottom: 1rem; color: var(--text-muted);">Subscribe for design inspiration.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');" style="max-width: 350px;">
+                        <input type="email" placeholder="Email address" required>
+                        <button type="submit">&#8594;</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aura Design Studio. All Rights Reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="slider-main.js"></script>
+</body>
+</html>
