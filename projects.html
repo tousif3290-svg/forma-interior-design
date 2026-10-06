@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura | Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="slider-style-v2.css">
+    <style>
+        body { background-color: var(--bg-color); color: var(--text-main); }
+        .page-header { padding: 15rem 5% 5rem 5%; text-align: center; }
+        .page-title { font-family: var(--font-heading); font-size: 5rem; letter-spacing: 2px; }
+        
+        .project-section { padding: 0 10% 10rem 10%; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 5rem; }
+        .project-section:last-child { border-bottom: none; }
+        
+        .project-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
+        .project-name { font-family: var(--font-heading); font-size: 4rem; }
+        .project-meta { font-family: var(--font-body); font-size: 1rem; text-align: right; text-transform: uppercase; letter-spacing: 1px; color: rgba(0,0,0,0.6); line-height: 1.8; }
+        
+        .project-main-img { width: 100%; height: 70vh; object-fit: cover; margin-bottom: 3rem; }
+        
+        .project-details { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 4rem; }
+        .project-desc { font-family: var(--font-body); font-size: 1.2rem; line-height: 1.8; color: rgba(0,0,0,0.8); }
+        .project-stats { display: flex; flex-direction: column; gap: 1.5rem; }
+        .stat-group { border-left: 1px solid #c9a77c; padding-left: 1.5rem; }
+        .stat-label { font-family: var(--font-body); font-size: 0.8rem; text-transform: uppercase; color: #c9a77c; letter-spacing: 2px; margin-bottom: 0.5rem; }
+        .stat-value { font-family: var(--font-heading); font-size: 1.5rem; }
+        
+        .project-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .project-gallery img { width: 100%; height: 50vh; object-fit: cover; }
+    </style>
+</head>
+<body>
+    <nav class="navbar forma-nav" style="background: rgba(0,0,0,0.8);">
+        <div class="nav-left">
+            <a href="index.html" class="logo">FORMA</a>
+        </div>
+        <ul class="nav-center">
+            <li><a href="projects.html" style="color: #c9a77c;">PROJECTS</a></li>
+            <li><a href="studio.html">STUDIO</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="nav-info">RESIDENTIAL<br>INTERIORS</div>
+            <div class="nav-info" style="margin-left: 2rem;">2024&ndash;<br>2025</div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <h1 class="page-title">SELECTED WORKS</h1>
+        </section>
+        <section class="project-section">
+            <div class="project-header">
+                <h2 class="project-name">The Morphing House</h2>
+                <div class="project-meta">Concept 2026<br>Virtual Tour</div>
+            </div>
+            
+            <a href="project-tour.html" style="display: block; position: relative; cursor: pointer; text-decoration: none;">
+                <img src="assets/slide_1_living_room_1790944813704.jpg" class="project-main-img" alt="The Morphing House">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.6); padding: 1.5rem 3rem; border: 1px solid rgba(255,255,255,0.4); border-radius: 50px; color: white; font-family: var(--font-body); letter-spacing: 2px; text-transform: uppercase;">View Interactive Tour</div>
+            </a>
+            
+            <div class="project-details">
+                <div class="project-desc">
+                    <p>A conceptual exploration of spatial transformation. In this interactive virtual tour, we designed a space that seamlessly morphs between different functions—from a cozy living room to a sleek kitchen, a grand dining room, a serene bedroom, and finally a luxurious spa bathroom.</p>
+                    <br>
+                    <p>Click the interactive tour above to scroll through the fluid transitions of these spaces, rendered with photorealistic precision to demonstrate our mastery of varied design languages within a single continuous environment.</p>
+                </div>
+                <div class="project-stats">
+                    <div class="stat-group">
+                        <div class="stat-label">Scope</div>
+                        <div class="stat-value">Concept Design, 3D Morphing Animation</div>
+                    </div>
+                    <div class="stat-group">
+                        <div class="stat-label">Size</div>
+                        <div class="stat-value">Infinite</div>
+                    </div>
+                    <div class="stat-group">
+                        <div class="stat-label">Lead Designer</div>
+                        <div class="stat-value">AI Studio</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="project-header">
+                <h2 class="project-name">The Minimalist</h2>
+                <div class="project-meta">Completed 2024<br>Manhattan, NY</div>
+            </div>
+            
+            <img src="assets/slide_1_living_room_1790944813704.jpg" class="project-main-img" alt="The Minimalist Living Room">
+            
+            <div class="project-details">
+                <div class="project-desc">
+                    <p>A complete gut renovation of a pre-war Manhattan loft. The client, a contemporary art collector, requested a serene, minimalist retreat that honors the building's industrial roots while introducing modern luxury. We stripped the space back to its raw concrete shell and introduced warm woods, soft linens, and bespoke lighting fixtures to create a gallery-like yet deeply comfortable home.</p>
+                    <br>
+                    <p>The open-plan living area features custom built-in cabinetry that hides all technology and clutter, ensuring the art pieces remain the focal point. Natural light was maximized by removing non-structural walls and utilizing sheer, automated window treatments.</p>
+                </div>
+                <div class="project-stats">
+                    <div class="stat-group">
+                        <div class="stat-label">Scope</div>
+                        <div class="stat-value">Full Renovation, Interior Architecture, Custom Furniture</div>
+                    </div>
+                    <div class="stat-group">
+                        <div class="stat-label">Size</div>
+                        <div class="stat-value">3,200 SQ FT</div>
+                    </div>
+                    <div class="stat-group">
+                        <div class="stat-label">Lead Designer</div>
+                        <div class="stat-value">Elena Rossi</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-gallery">
+                <img src="assets/dining_room.jpg" alt="Minimalist Dining Area">
+                <img src="assets/slide_2_kitchen_1790945240669.jpg" alt="Minimalist Kitchen">
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="project-header">
+                <h2 class="project-name">Urban Sanctuary</h2>
+                <div class="project-meta">Completed 2024<br>Brooklyn, NY</div>
+            </div>
+            
+            <img src="assets/slide_3_bedroom_1790946165935.jpg" class="project-main-img" alt="Urban Sanctuary Bedroom">
+            
+            <div class="project-details">
+                <div class="project-desc">
+                    <p>Designed for a busy executive, this multi-story Brooklyn townhouse was transformed into a quiet refuge from the chaotic city outside. Our design language focused on tactile, natural materials—honed limestone, brushed brass, and dark walnut—to create an atmosphere of total relaxation and grounding.</p>
+                    <br>
+                    <p>The master suite was entirely reconfigured to include a spa-like bathroom that acts as a wet room, seamlessly integrating the sleeping and bathing areas. Ambient, architectural lighting replaces harsh overheads, allowing the mood of the room to shift effortlessly from day to night.</p>
+                </div>
+                <div class="project-stats">
+                    <div class="stat-group">
+                        <div class="stat-label">Scope</div>
+                        <div class="stat-value">Interior Styling, Lighting Design, Bathroom Remodel</div>
+                    </div>
+                    <div class="stat-group">
+                        <div class="stat-label">Size</div>
+                        <div class="stat-value">4,100 SQ FT</div>
+                    </div>
+                    <div class="stat-group">
+                        <div class="stat-label">Lead Designer</div>
+                        <div class="stat-value">Marcus Chen</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-gallery" style="grid-template-columns: 1fr;">
+                <img src="assets/slide_4_bathroom_1790944922511.jpg" alt="Urban Sanctuary Bathroom">
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" style="position: relative; z-index: 10; background-color: var(--bg-color);">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column large">
+                    <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1rem;">FORMA.</h2>
+                    <p style="font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 350px; color: var(--text-muted);">Curating timeless interiors for modern living. Elevating spaces with minimalist aesthetics.</p>
+                    
+                    <div class="social-icons" style="display: flex; gap: 1.2rem; flex-direction: row; font-size: 1.2rem;">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column large">
+                    <h4>Newsletter</h4>
+                    <p style="font-size: 1.05rem; margin-bottom: 1rem; color: var(--text-muted);">Subscribe for design inspiration.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');" style="max-width: 350px;">
+                        <input type="email" placeholder="Email address" required>
+                        <button type="submit">&#8594;</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Forma Design Studio. All Rights Reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

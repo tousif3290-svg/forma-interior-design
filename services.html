@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura | Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="slider-style-v2.css">
+    <style>
+        body { background-color: #f0ebe1; color: var(--text-main); }
+        .page-header { padding: 15rem 5% 5rem 5%; text-align: center; }
+        .page-title { font-family: var(--font-heading); font-size: 5rem; letter-spacing: 2px; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; padding: 5rem 10% 10rem 10%; }
+        .service-card { text-align: center; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 2rem; }
+        .service-title { font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1rem; }
+        .service-desc { font-family: var(--font-body); font-size: 1rem; line-height: 1.6; color: rgba(0,0,0,0.7); }
+    </style>
+</head>
+<body>
+    <nav class="navbar forma-nav" style="background: rgba(0,0,0,0.8);">
+        <div class="nav-left">
+            <a href="index.html" class="logo">FORMA</a>
+        </div>
+        <ul class="nav-center">
+            <li><a href="projects.html">PROJECTS</a></li>
+            <li><a href="studio.html">STUDIO</a></li>
+            <li><a href="services.html" style="color: #c9a77c;">SERVICES</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="nav-info">RESIDENTIAL<br>INTERIORS</div>
+            <div class="nav-info" style="margin-left: 2rem;">2024&ndash;<br>2025</div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <h1 class="page-title">OUR EXPERTISE</h1>
+        </section>
+        <section class="services-grid">
+            <div class="service-card">
+                <h3 class="service-title">Spatial Planning</h3>
+                <p class="service-desc">Optimizing layouts for maximum flow, functionality, and aesthetic harmony in residential spaces.</p>
+            </div>
+            <div class="service-card">
+                <h3 class="service-title">Interior Design</h3>
+                <p class="service-desc">Curating materials, finishes, and bespoke furniture to create a cohesive and luxurious atmosphere.</p>
+            </div>
+            <div class="service-card">
+                <h3 class="service-title">Project Management</h3>
+                <p class="service-desc">Overseeing every detail of the construction and styling process to ensure flawless execution.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" style="position: relative; z-index: 10; background-color: #f0ebe1; color: var(--text-main);">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column large">
+                    <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1rem;">FORMA.</h2>
+                    <p style="font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 350px; color: rgba(0,0,0,0.6);">Curating timeless interiors for modern living. Elevating spaces with minimalist aesthetics.</p>
+                    
+                    <div class="social-icons" style="display: flex; gap: 1.2rem; flex-direction: row; font-size: 1.2rem;">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column large">
+                    <h4>Newsletter</h4>
+                    <p style="font-size: 1.05rem; margin-bottom: 1rem; color: rgba(0,0,0,0.6);">Subscribe for design inspiration.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');" style="max-width: 350px;">
+                        <input type="email" placeholder="Email address" required style="border-bottom-color: rgba(0,0,0,0.2); color: var(--text-main);">
+                        <button type="submit" style="color: var(--text-main);">&#8594;</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom" style="border-top-color: rgba(0,0,0,0.1);">
+                <p>&copy; 2026 Forma Design Studio. All Rights Reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

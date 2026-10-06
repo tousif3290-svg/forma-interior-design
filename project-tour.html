@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMA | The Morphing House</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="slider-style-v2.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <nav class="navbar forma-nav" style="background: rgba(0,0,0,0.8);">
+        <div class="nav-left">
+            <a href="index.html" class="logo">FORMA</a>
+        </div>
+        <ul class="nav-center">
+            <li><a href="projects.html" style="color: #c9a77c;">PROJECTS</a></li>
+            <li><a href="studio.html">STUDIO</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="nav-info">RESIDENTIAL<br>INTERIORS</div>
+            <div class="nav-info" style="margin-left: 2rem;">2024&ndash;<br>2025</div>
+        </div>
+    </nav>
+
+    <main class="stack-container">
+        <section class="stack-section">
+            <header class="hero">
+        <div class="slider-container forma-slider">
+            <video id="bg-video" src="assets/website-b-fixed.mp4" muted playsinline preload="auto" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.6) contrast(1.1);"></video>
+            
+            <div class="slides-wrapper" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none;">
+                <!-- Living Room -->
+                <div class="slide active">
+                    <div class="forma-content" style="pointer-events: auto;">
+                        <p class="forma-subtitle">THE MORPHING HOUSE</p>
+                        <h1 class="forma-title">THE LIVING<br>ROOM</h1>
+                        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                            <p class="forma-desc">A massive plush modular sofa layered with textures, setting a tone of deep relaxation. Soft concrete walls meet warm oak floors.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kitchen -->
+                <div class="slide">
+                    <div class="forma-content" style="pointer-events: auto;">
+                        <p class="forma-subtitle">THE MORPHING HOUSE</p>
+                        <h1 class="forma-title">THE KITCHEN</h1>
+                        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                            <p class="forma-desc">A seamless concrete island anchors the space, beautifully contrasted with dark wood cabinetry and modern pendant lighting.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dining Room -->
+                <div class="slide">
+                    <div class="forma-content" style="pointer-events: auto;">
+                        <p class="forma-subtitle">THE MORPHING HOUSE</p>
+                        <h1 class="forma-title">THE DINING<br>ROOM</h1>
+                        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                            <p class="forma-desc">A solid wood dining table for eight, crowned by a complex geometric chandelier. The perfect space for curated gatherings.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bedroom -->
+                <div class="slide">
+                    <div class="forma-content" style="pointer-events: auto;">
+                        <p class="forma-subtitle">THE MORPHING HOUSE</p>
+                        <h1 class="forma-title">THE BEDROOM</h1>
+                        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                            <p class="forma-desc">A serene retreat dominated by an oversized king bed and soft plaster walls. Designed for absolute tranquility.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bathroom -->
+                <div class="slide">
+                    <div class="forma-content" style="pointer-events: auto;">
+                        <p class="forma-subtitle">THE MORPHING HOUSE</p>
+                        <h1 class="forma-title">THE BATHROOM</h1>
+                        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                            <p class="forma-desc">Rich marble encases a luxurious spa bathroom featuring a sleek freestanding soaking tub and lush tropical plants.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </header>
+        </section>
+    </main>
+
+    <footer class="footer" style="position: relative; z-index: 10; background-color: var(--bg-color);">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column large">
+                    <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1rem;">FORMA.</h2>
+                    <p style="font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 350px; color: var(--text-muted);">Curating timeless interiors for modern living. Elevating spaces with minimalist aesthetics.</p>
+                    
+                    <div class="social-icons" style="display: flex; gap: 1.2rem; flex-direction: row; font-size: 1.2rem;">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column large">
+                    <h4>Newsletter</h4>
+                    <p style="font-size: 1.05rem; margin-bottom: 1rem; color: var(--text-muted);">Subscribe for design inspiration.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');" style="max-width: 350px;">
+                        <input type="email" placeholder="Email address" required>
+                        <button type="submit">&#8594;</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Forma Design Studio. All Rights Reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="project-tour.js"></script>
+</body>
+</html>

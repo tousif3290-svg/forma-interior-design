@@ -3,105 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura | Interior Design</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>FORMA | Interior Design</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="slider-style-v2.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        /* Homepage specific styles */
+        .hero-home {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end; /* Push image to bottom */
+            position: relative;
+            background-color: var(--bg-color);
+            padding-top: 8rem; /* Clear navbar */
+        }
+        .hero-home-content {
+            text-align: center;
+            z-index: 2;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+        }
+        .hero-home h1 {
+            font-size: clamp(3rem, 6vw, 6rem);
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+        .hero-home p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        .hero-img-wrap {
+            width: 90%;
+            max-width: 1400px;
+            height: 60vh;
+            overflow: hidden;
+            z-index: 1;
+            position: relative;
+        }
+        .hero-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translateY(20%);
+            opacity: 0;
+            animation: riseUp 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards 0.5s;
+        }
+
+        @keyframes riseUp {
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .vision-section {
+            padding: 8rem 5%;
+            background-color: var(--bg-color);
+            text-align: center;
+        }
+        .vision-section h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            color: var(--accent);
+            font-family: var(--font-body);
+        }
+        .vision-text {
+            font-size: clamp(1.5rem, 3vw, 3rem);
+            line-height: 1.5;
+            max-width: 1000px;
+            margin: 0 auto;
+            font-family: var(--font-heading);
+            color: var(--text-main);
+            font-style: italic;
+        }
+
+        /* 3D Book Animation Section */
+        .book-section {
+            background-color: #e8e4dc;
+            padding: 10rem 0;
+            overflow: hidden;
+        }
+        .book-intro {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        
+        .book-wrapper {
+            perspective: 2500px;
+            width: 90%;
+            max-width: 1200px;
+            height: 70vh;
+            margin: 0 auto;
+            display: flex;
+            position: relative;
+        }
+        
+        .book-left, .book-right {
+            width: 50%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .book-left {
+            background: #f4f1eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem;
+            box-shadow: inset -10px 0 20px rgba(0,0,0,0.05);
+            border-radius: 10px 0 0 10px;
+        }
+        
+        .book-right {
+            transform-style: preserve-3d;
+        }
+        
+        .book-page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-origin: left center;
+            transform-style: preserve-3d;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 5px 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .page-front, .page-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .page-front {
+            transform: rotateY(0deg) translateZ(1px);
+        }
+        
+        .page-back {
+            transform: rotateY(180deg) translateZ(1px);
+            background: #f4f1eb;
+            box-shadow: inset 10px 0 20px rgba(0,0,0,0.05);
+            border-radius: 10px 0 0 10px;
+        }
+
+        .page-front img, .page-back img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .page-content {
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .book-title { font-size: 2.5rem; margin-bottom: 1rem; font-family: var(--font-heading); }
+        .book-desc { font-size: 1rem; color: var(--text-muted); line-height: 1.8; }
+        
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">AURA.</a>
-        <ul class="nav-links">
-            <li><a href="about.html">About</a></li>
-            <li><a href="portfolio.html">Works</a></li>
-            <li><a href="contact.html">Contact</a></li>
+    <nav class="navbar forma-nav" style="background: rgba(0,0,0,0.2);">
+        <div class="nav-left">
+            <a href="index.html" class="logo">FORMA</a>
+        </div>
+        <ul class="nav-center">
+            <li><a href="projects.html">PROJECTS</a></li>
+            <li><a href="studio.html">STUDIO</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
         </ul>
+        <div class="nav-right">
+            <div class="nav-info">RESIDENTIAL<br>INTERIORS</div>
+            <div class="nav-info" style="margin-left: 2rem;">2024&ndash;<br>2025</div>
+        </div>
     </nav>
 
-    <main class="stack-container">
-        <section class="stack-section">
-            <header class="hero">
-                <div class="slider-container">
-            <div class="slide active">
-                <img src="assets/slide_1_living_room_1790944813704.jpg" alt="Living Room">
-                <div class="slide-content">
-                    <h1>Spaces that breathe.<br>Designs that live.</h1>
-                    <p>Curating timeless interiors for modern living.</p>
-                    <a href="contact.html" class="btn">View Project</a>
-                </div>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-home">
+            <div class="hero-home-content">
+                <p>Forma Design Studio</p>
+                <h1>Crafting Serenity.</h1>
             </div>
-            <div class="slide">
-                <img src="assets/slide_2_kitchen_1790945240669.jpg" alt="Kitchen">
-                <div class="slide-content">
-                    <h1>Culinary Elegance</h1>
-                    <p>Where function meets exquisite form.</p>
-                    <a href="contact.html" class="btn">View Project</a>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="assets/slide_3_bedroom_1790946165935.jpg" alt="Bedroom">
-                <div class="slide-content">
-                    <h1>Serene Retreats</h1>
-                    <p>Designed for restorative rest.</p>
-                    <a href="contact.html" class="btn">View Project</a>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="assets/slide_4_bathroom_1790944922511.jpg" alt="Bathroom">
-                <div class="slide-content">
-                    <h1>Personal Sanctuaries</h1>
-                    <p>Spa-like luxury in the comfort of home.</p>
-                    <a href="contact.html" class="btn">View Project</a>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="assets/slide_5_office_1790944935770.jpg" alt="Office">
-                <div class="slide-content">
-                    <h1>Focused Environments</h1>
-                    <p>Inspiring workspaces for modern professionals.</p>
-                    <a href="#contact" class="btn">View Project</a>
-                </div>
-            </div>
-        </div>
-        <div class="slider-controls">
-            <button class="prev-btn">&#10094;</button>
-            <button class="next-btn">&#10095;</button>
-        </div>
-            </header>
-        </section>
-
-        <section class="stack-section" style="background-color: var(--bg-color); color: var(--text-main); display: flex; align-items: center; justify-content: center; text-align: center;">
-            <div class="container">
-                <h2 style="font-family: var(--font-heading); font-size: 5rem; margin-bottom: 2rem;">Our Philosophy</h2>
-                <p style="font-size: 1.4rem; max-width: 800px; margin: 0 auto 3rem auto; line-height: 1.6; color: var(--text-muted);">We believe that the spaces we inhabit shape our daily experiences. Our mission is to craft environments that inspire, calm, and elevate the human spirit.</p>
-                <a href="about.html" class="btn btn-dark">Discover The Studio</a>
+            <div class="hero-img-wrap">
+                <img src="assets/slide_1_living_room_1790944813704.jpg" alt="Interior Living Room">
             </div>
         </section>
 
-        <section class="stack-section" style="background-color: var(--text-main); color: var(--bg-color); display: flex; align-items: center; justify-content: center; text-align: center;">
-            <div class="container">
-                <h2 style="font-family: var(--font-heading); font-size: 5rem; margin-bottom: 2rem;">Featured Works</h2>
-                <p style="font-size: 1.4rem; max-width: 800px; margin: 0 auto 3rem auto; line-height: 1.6; color: rgba(255,255,255,0.7);">A curated selection of our most recent and celebrated interior design projects.</p>
-                <a href="portfolio.html" class="btn" style="border: 1px solid rgba(255,255,255,0.2);">View Portfolio</a>
+        <!-- Vision Section -->
+        <section class="vision-section">
+            <h2>Our Vision</h2>
+            <div class="vision-text">
+                "We believe that true luxury lies in the spaces between. We strip away the unnecessary to reveal the pure essence of architecture, light, and form, creating homes that are deeply personal and effortlessly timeless."
             </div>
         </section>
 
-        <section class="stack-section" style="background-color: #f0ebe1; color: var(--text-main); display: flex; align-items: center; justify-content: center; text-align: center;">
-            <div class="container">
-                <h2 style="font-family: var(--font-heading); font-size: 5rem; margin-bottom: 2rem;">Our Expertise</h2>
-                <p style="font-size: 1.4rem; max-width: 800px; margin: 0 auto 3rem auto; line-height: 1.6; color: var(--text-muted);">From architectural conception to the final curated accessory, we offer comprehensive design services including spatial planning, custom furniture design, and project management.</p>
-                <a href="contact.html" class="btn btn-dark">Inquire Now</a>
+        <!-- Book Animation Section -->
+        <section class="book-section" id="book-section">
+            <div class="book-intro">
+                <h2 style="font-size: 3rem; font-family: var(--font-heading);">Our Approach</h2>
+                <p style="letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; color: var(--text-muted);">Scroll to open the book</p>
+            </div>
+            
+            <div class="book-wrapper">
+                <!-- Book Left Base -->
+                <div class="book-left">
+                    <div class="page-content">
+                        <p style="text-transform: uppercase; letter-spacing: 3px; color: var(--accent); margin-bottom: 1rem; font-size: 0.8rem;">Chapter 01</p>
+                        <h3 class="book-title">The Foundation</h3>
+                        <p class="book-desc">Every great project begins with a profound understanding of the site's architectural heritage. We study the natural light, the flow of the space, and the structural bones before we even consider adding furniture or decor.</p>
+                    </div>
+                </div>
+                
+                <!-- Flipping Pages & Right Base -->
+                <div class="book-right">
+                    
+                    <!-- Right Base (Static, bottom-most) -->
+                    <div class="book-page" style="position: absolute; z-index: 0; background: #f4f1eb; border-radius: 0 10px 10px 0; box-shadow: inset 10px 0 20px rgba(0,0,0,0.05); transform-origin: left center;">
+                        <div class="page-content">
+                            <p style="text-transform: uppercase; letter-spacing: 3px; color: var(--accent); margin-bottom: 1rem; font-size: 0.8rem;">Chapter 04</p>
+                            <h3 class="book-title">The Result</h3>
+                            <p class="book-desc">A space that feels like it has always been there, yet entirely new. A sanctuary that elevates your daily rituals and ages beautifully over generations.</p>
+                        </div>
+                    </div>
+
+                    <!-- Page 3 (Z: 1) -->
+                    <div class="book-page page3" style="z-index: 1;">
+                        <div class="page-front">
+                            <img src="assets/slide_3_bedroom_1790946165935.jpg" alt="Bedroom">
+                        </div>
+                        <div class="page-back">
+                            <img src="assets/slide_4_bathroom_1790944922511.jpg" alt="Bath">
+                        </div>
+                    </div>
+                    
+                    <!-- Page 2 (Z: 2) -->
+                    <div class="book-page page2" style="z-index: 2;">
+                        <div class="page-front">
+                            <div class="page-content" style="background: #fff;">
+                                <p style="text-transform: uppercase; letter-spacing: 3px; color: var(--accent); margin-bottom: 1rem; font-size: 0.8rem;">Chapter 02</p>
+                                <h3 class="book-title">Spatial Harmony</h3>
+                                <p class="book-desc">We strip away unnecessary walls and optimize floor plans. Our custom millwork ensures that the mechanics of daily life are hidden, leaving only serenity.</p>
+                            </div>
+                        </div>
+                        <div class="page-back">
+                            <div class="page-content" style="background: #f4f1eb;">
+                                <p style="text-transform: uppercase; letter-spacing: 3px; color: var(--accent); margin-bottom: 1rem; font-size: 0.8rem;">Chapter 03</p>
+                                <h3 class="book-title">Tactile Warmth</h3>
+                                <p class="book-desc">Minimalism doesn't have to be cold. By layering rich textures—honed marble, brushed brass, and natural linens—we create spaces that beg to be touched.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Page 1 (Top / Cover - Z: 3) -->
+                    <div class="book-page page1" style="z-index: 3;">
+                        <div class="page-front">
+                            <img src="assets/dining_room.jpg" alt="Dining Room">
+                        </div>
+                        <div class="page-back">
+                            <img src="assets/slide_1_living_room_1790944813704.jpg" alt="Living Room">
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer" style="position: relative; z-index: 10;">
+    <footer class="footer" style="position: relative; z-index: 10; background-color: var(--bg-color);">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column large">
-                    <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1rem;">AURA.</h2>
+                    <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1rem;">FORMA.</h2>
                     <p style="font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 350px; color: var(--text-muted);">Curating timeless interiors for modern living. Elevating spaces with minimalist aesthetics.</p>
                     
                     <div class="social-icons" style="display: flex; gap: 1.2rem; flex-direction: row; font-size: 1.2rem;">
@@ -122,7 +312,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 Aura Design Studio. All Rights Reserved.</p>
+                <p>&copy; 2026 Forma Design Studio. All Rights Reserved.</p>
                 <div class="legal-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms & Conditions</a>
@@ -131,6 +321,33 @@
         </div>
     </footer>
 
-    <script src="slider-main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typeof gsap === 'undefined') return;
+            gsap.registerPlugin(ScrollTrigger);
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#book-section",
+                    start: "center center",
+                    end: "+=3000",
+                    scrub: 1,
+                    pin: true
+                }
+            });
+
+            // Flip Page 1
+            tl.to(".page1", { rotateY: -180, duration: 1, ease: "power1.inOut" }, 0)
+              .set(".page1", { zIndex: 4 }, 0.5); // Ensure it sits on top of book-left
+
+            // Flip Page 2
+            tl.to(".page2", { rotateY: -180, duration: 1, ease: "power1.inOut" }, 1)
+              .set(".page2", { zIndex: 5 }, 1.5); // Ensure it sits on top of page 1
+            
+            // Flip Page 3
+            tl.to(".page3", { rotateY: -180, duration: 1, ease: "power1.inOut" }, 2)
+              .set(".page3", { zIndex: 6 }, 2.5); // Ensure it sits on top of page 2
+        });
+    </script>
 </body>
 </html>

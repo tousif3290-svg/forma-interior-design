@@ -4,95 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aura | Contact</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="slider-style-v2.css">
+    <style>
+        body { background-color: var(--bg-color); color: var(--text-main); }
+        .page-header { padding: 15rem 5% 2rem 5%; text-align: center; }
+        .page-title { font-family: var(--font-heading); font-size: 5rem; letter-spacing: 2px; }
+        .contact-container { padding: 2rem 20% 10rem 20%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .contact-info { font-family: var(--font-body); font-size: 1.2rem; line-height: 2; color: var(--text-muted); }
+        .contact-form input, .contact-form textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(0,0,0,0.2); color: var(--text-main); padding: 1rem 0; margin-bottom: 2rem; font-family: var(--font-body); font-size: 1rem; }
+        .contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(0,0,0,0.4); }
+        .contact-form input:focus, .contact-form textarea:focus { outline: none; border-bottom: 1px solid var(--accent); }
+        .btn-submit { background: transparent; color: var(--text-main); border: 1px solid var(--text-main); padding: 1rem 3rem; font-family: var(--font-body); text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: all 0.3s; }
+        .btn-submit:hover { background: var(--text-main); color: var(--bg-color); }
+    </style>
 </head>
 <body>
-    <nav class="navbar solid">
-        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">AURA.</a>
-        <ul class="nav-links">
-            <li><a href="about.html">About</a></li>
-            <li><a href="portfolio.html">Works</a></li>
-            <li><a href="contact.html">Contact</a></li>
+    <nav class="navbar forma-nav" style="background: rgba(0,0,0,0.8);">
+        <div class="nav-left">
+            <a href="index.html" class="logo">FORMA</a>
+        </div>
+        <ul class="nav-center">
+            <li><a href="projects.html">PROJECTS</a></li>
+            <li><a href="studio.html">STUDIO</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="contact.html" style="color: #c9a77c;">CONTACT</a></li>
         </ul>
+        <div class="nav-right">
+            <div class="nav-info">RESIDENTIAL<br>INTERIORS</div>
+            <div class="nav-info" style="margin-left: 2rem;">2024&ndash;<br>2025</div>
+        </div>
     </nav>
 
-    <div class="page-header">
-        <div class="container fade-in-up visible">
-            <p class="subtitle">Inquiries</p>
-            <h1>Let's Create Together.</h1>
-            <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted); font-size: 1.2rem;">We are currently accepting new residential and commercial projects for the upcoming year.</p>
-        </div>
-    </div>
-
-    <section class="section-padding" style="padding-top: var(--spacing-md);">
-        <div class="container scroll-reveal">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h2>Reach Out</h2>
-                    <p>Whether you have a fully formed vision or just the beginning of an idea, we would love to hear from you. Fill out the form, or reach out directly to our studio.</p>
-                    
-                    <div class="contact-details">
-                        <h4>Studio</h4>
-                        <p>125 Design District Avenue<br>New York, NY 10013</p>
-                    </div>
-                    
-                    <div class="contact-details">
-                        <h4>Contact</h4>
-                        <p>hello@auradesign.com<br>+1 (555) 123-4567</p>
-                    </div>
-                    
-                    <div class="contact-details">
-                        <h4>Hours</h4>
-                        <p>Monday — Friday<br>9:00 AM — 6:00 PM EST</p>
-                    </div>
-
-                    <div style="margin-top: 3rem;">
-                        <h3 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 1.5rem;">FAQ</h3>
-                        <div style="margin-bottom: 1.5rem;">
-                            <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">What is your typical project timeline?</h4>
-                            <p style="color: var(--text-muted); font-size: 0.95rem;">Full-scale residential projects typically range from 6 to 12 months, depending on the scope of architectural changes and custom furniture lead times.</p>
-                        </div>
-                        <div style="margin-bottom: 1.5rem;">
-                            <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Do you take international projects?</h4>
-                            <p style="color: var(--text-muted); font-size: 0.95rem;">Yes, we regularly collaborate on international projects. We have a robust network of trusted global contractors and artisans to ensure seamless execution abroad.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks for reaching out! We will get back to you soon.');">
-                        <div class="form-group">
-                            <input type="text" id="name" required>
-                            <label for="name">Your Name</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" required>
-                            <label for="email">Email Address</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="project" required>
-                            <label for="project">Project Type (e.g. Residential, Commercial)</label>
-                        </div>
-                        <div class="form-group" style="margin-bottom: 3rem;">
-                            <textarea id="message" rows="4" required></textarea>
-                            <label for="message">Tell us about your project...</label>
-                        </div>
-                        <button type="submit" class="btn btn-dark">Send Inquiry</button>
-                    </form>
-                </div>
+    <main>
+        <section class="page-header">
+            <h1 class="page-title">INQUIRE</h1>
+        </section>
+        <section class="contact-container">
+            <div class="contact-info">
+                <p style="color: var(--text-main); font-size: 1.5rem; margin-bottom: 2rem;">Let's discuss your next project.</p>
+                <p>New York Studio<br>125 Broadway, Floor 4<br>New York, NY 10012</p>
+                <br>
+                <p>hello@formastudio.com<br>+1 (212) 555-0198</p>
             </div>
-        </div>
-    </section>
+            <div class="contact-form">
+                <input type="text" placeholder="NAME">
+                <input type="email" placeholder="EMAIL">
+                <textarea rows="4" placeholder="TELL US ABOUT YOUR PROJECT..."></textarea>
+                <button class="btn-submit">SUBMIT</button>
+            </div>
+        </section>
+    </main>
 
-    <footer class="footer">
+    <footer class="footer" style="position: relative; z-index: 10; background-color: var(--bg-color);">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column large">
-                    <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1rem;">AURA.</h2>
+                    <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1rem;">FORMA.</h2>
                     <p style="font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 350px; color: var(--text-muted);">Curating timeless interiors for modern living. Elevating spaces with minimalist aesthetics.</p>
                     
                     <div class="social-icons" style="display: flex; gap: 1.2rem; flex-direction: row; font-size: 1.2rem;">
@@ -113,7 +82,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 Aura Design Studio. All Rights Reserved.</p>
+                <p>&copy; 2026 Forma Design Studio. All Rights Reserved.</p>
                 <div class="legal-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms & Conditions</a>
@@ -121,7 +90,5 @@
             </div>
         </div>
     </footer>
-
-    <script src="slider-main.js"></script>
 </body>
 </html>
